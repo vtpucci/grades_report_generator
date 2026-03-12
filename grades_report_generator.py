@@ -38,7 +38,7 @@ class GradesReportGeneratorApp(tk.Tk):
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
         # Add an icon for the window
-        img_path = 'Boxta-reduzido.ico'
+        img_path = 'grades_scraper-logo-ico.ico'
         self.iconbitmap(img_path)
         self.iconbitmap(default=img_path)
         self.driver = None
@@ -72,7 +72,7 @@ class GradesReportGeneratorApp(tk.Tk):
         self.logo_frame = tk.Frame(self)
         self.logo_frame.pack()
 
-        self.logo_image = Image.open("Boxta (500 x 220 px).png")
+        self.logo_image = Image.open("grades_scraper logo (1).png")
         self.logo_image = self.logo_image.resize((200, 90), Image.LANCZOS)  # Resampling.LANCZOS
         self.logo_image = ImageTk.PhotoImage(self.logo_image)
         self.logo_label = Label(self.logo_frame, image=self.logo_image)
@@ -256,7 +256,7 @@ class GradesReportGeneratorApp(tk.Tk):
         self.center_window()
         self.logo_frame = tk.Frame(self)
         self.logo_frame.pack(fill="x", anchor="ne")
-        self.logo_image = Image.open("Boxta (500 x 220 px).png")
+        self.logo_image = Image.open("grades_scraper logo (1).png")
         self.logo_image = self.logo_image.resize((100, 45), Image.LANCZOS)
         self.logo_image = ImageTk.PhotoImage(self.logo_image)
         self.logo_label = Label(self.logo_frame, image=self.logo_image)
@@ -963,7 +963,7 @@ class GradesReportGeneratorApp(tk.Tk):
 
             # Add logo (image) in the first row
             try:
-                logo = opimage('Boxta (500 x 220 px).png')
+                logo = opimage('grades_scraper logo (1).png')
                 logo.width = 120  # Adjust the width of the image
                 logo.height = 50  # Adjust the height of the image
                 ws.add_image(logo, 'A1')
@@ -1168,7 +1168,7 @@ class GradesReportGeneratorApp(tk.Tk):
 
     def on_closing(self):
         # if messagebox.askokcancel("Quit", "Do you want to quit?", icon="warning"):
-        if Messagebox.show_question("Do you want to close the app?","Close App") == "Sim":
+        if Messagebox.show_question("Do you want to close the app?","Close App") == "Yes":
             if self.driver:
                 self.driver.quit()
             self.destroy()
